@@ -48,7 +48,7 @@ public class BasicCourseTest extends TestSessionInitiator{
 		System.out.println(url);
 		Assert.assertEquals(url, "");
 		test.basiccourse.clickOnLogin();
-		
+		test.basiccourse.clickGoogleLogin();
 		
 	}
 	
