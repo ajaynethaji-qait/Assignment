@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+  <reporter-output>
+    <line>
+      <![CDATA[[INFO]: The test Browser is CHROME !!!]]>
+    </line>
+    <line>
+      <![CDATA[[INFO]: The Test: BASICCOURSETEST COMPLETED!
+]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2020-08-10T17:24:49 IST" name="Suite1" finished-at="2020-08-10T17:25:00 IST" duration-ms="10449">
+    <groups>
+    </groups>
+    <test started-at="2020-08-10T17:24:49 IST" name="Nopackage" finished-at="2020-08-10T17:25:00 IST" duration-ms="10449">
+      <class name="com.qait.tests.BasicCourseTest">
+        <test-method is-config="true" signature="TestSessionInitiators()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:49 IST" name="TestSessionInitiators" finished-at="2020-08-10T17:24:49 IST" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSessionInitiators -->
+        <test-method is-config="true" signature="launchMyApplication()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:49 IST" name="launchMyApplication" finished-at="2020-08-10T17:24:56 IST" duration-ms="6452" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO]: The test Browser is CHROME !!!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchMyApplication -->
+        <test-method is-config="true" signature="start_test_session()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:56 IST" name="start_test_session" finished-at="2020-08-10T17:24:56 IST" duration-ms="3" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.qait.automation.TestSessionInitiator._configureBrowser(TestSessionInitiator.java:128)
+at com.qait.automation.MMTTestInitiator.<init>(MMTTestInitiator.java:21)
+at com.qait.tests.BasicCourseTest.start_test_session(BasicCourseTest.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start_test_session -->
+        <test-method is-config="true" signature="logTestMethod(java.lang.reflect.Method)[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:56 IST" name="logTestMethod" finished-at="2020-08-10T17:24:56 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qait.tests.BasicCourseTest.verify_LoginPage()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logTestMethod -->
+        <test-method signature="verify_LoginPage()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:56 IST" name="verify_LoginPage" finished-at="2020-08-10T17:24:56 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.qait.automation.TestSessionInitiator._configureBrowser(TestSessionInitiator.java:128)
+at com.qait.automation.MMTTestInitiator.<init>(MMTTestInitiator.java:21)
+at com.qait.tests.BasicCourseTest.start_test_session(BasicCourseTest.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_LoginPage -->
+        <test-method is-config="true" signature="take_screenshot_on_failure(org.testng.ITestResult)[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:56 IST" name="take_screenshot_on_failure" finished-at="2020-08-10T17:24:56 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=BasicCourseTest.verify_LoginPage()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- take_screenshot_on_failure -->
+        <test-method is-config="true" signature="stop_test_session()[pri:0, instance:com.qait.tests.BasicCourseTest@31c88ec8]" started-at="2020-08-10T17:24:56 IST" name="stop_test_session" finished-at="2020-08-10T17:25:00 IST" duration-ms="3720" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO]: The Test: BASICCOURSETEST COMPLETED!
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- stop_test_session -->
+      </class> <!-- com.qait.tests.BasicCourseTest -->
+    </test> <!-- Nopackage -->
+  </suite> <!-- Suite1 -->
+</testng-results>

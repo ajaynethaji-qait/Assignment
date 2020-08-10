@@ -1,0 +1,27 @@
+#UIElements
+login_Icon: xpath: //div[@class='makeFlex column flexOne whiteText latoBold']
+google_Login: xpath: //span[@class='font14 darkGreyText latoBold']
+select_Username: xpath: //div[text()='Ajay Nethaji']
+input_Password: xpath: (//input[@class='whsOnd zHQkBf'])[1]
+tab_FLights: xpath: //span[@class='chNavText darkGreyText' and text()='Flights']
+tab_Hotels: xpath: //span[@class='chNavText darkGreyText' and text()='Hotels']
+tab_Trains: xapth: //span[@class='chNavText darkGreyText' and text()='Trains']
+tab_Buses: xpath: //span[@class='chNavText darkGreyText' and text()='Buses']
+tab_Visa: xpath: //span[@class='chNavText darkGreyText' and text()='Visa']
+tab_Cabs: xpath: //span[@class='chNavText darkGreyText' and text()='Cabs']
+tab_CharterFlights: xpath: //span[@class='chNavText darkGreyText' and text()='Charter Flights']
+input_FromCity: xpath: //span[@class='lbl_input latoBold  appendBottom5' and text()='From']
+input_ToCity: xpath: //span[@class='lbl_input latoBold  appendBottom5' and text()='To']
+btn_Oneway: xpath: (//span[@class='tabsCircle appendRight5'])[1]
+btn_Search: xpath: //a[@class='primaryBtn font24 latoBold widgetSearchBtn ' and text()='Search']
+tab_Flight: xpath: (//p[@class='font14 lineHeight18' and text()='Air India'])[2]
+btn_ViewPrice: xpath: //button[@class='ViewFareBtn  text-uppercase ']
+box_NonStop: xpath: //p[@class='font14 append_bottom4 lineHeight18' and text()='Non Stop']
+
+#Hotel
+input_City: xpath: //input[@class='react-autosuggest__input react-autosuggest__input--open']
+
+
+
+
+
