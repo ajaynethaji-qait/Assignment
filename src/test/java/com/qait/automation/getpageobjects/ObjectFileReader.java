@@ -25,7 +25,7 @@ public class ObjectFileReader {
 			String elementName) {
 		setTier();
 		try {
-			FileReader specFile = new FileReader(filepath + tier + pageName + ".txt");
+			FileReader specFile = new FileReader(filepath + tier + pageName + ".spec");
 			return getElement(specFile, elementName);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class ObjectFileReader {
 		String returnElement = "";
 		try {
 			br = new BufferedReader(new FileReader(filepath + tier + pageName
-					+ ".txt"));
+					+ ".spec"));
 			String line = br.readLine();
 
 			while (line != null && !line.startsWith("========")) {

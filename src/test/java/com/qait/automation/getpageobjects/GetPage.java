@@ -211,7 +211,7 @@ public class GetPage extends BaseUi {
 		return childOfElement(el, elementToken, "");
 	}
 
-	protected List<WebElement> elements(String elementToken, String replacement) {
+	public List<WebElement> elements(String elementToken, String replacement) {
 		try {
 			return wait.waitForElementsToBeVisible(webdriver.findElements(getLocator(elementToken, replacement)));
 		} catch (Exception e) {

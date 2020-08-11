@@ -1,60 +1,37 @@
 package com.qait.tests;
 
+
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import static com.qait.automation.utils.YamlReader.getData;
-import com.qait.automation.MMTTestInitiator;
 import com.qait.automation.TestSessionInitiator;
+
+import static com.qait.automation.TestSessionInitiator.test;
 
 
 public class BasicCourseTest extends TestSessionInitiator{
 
-	
-	MMTTestInitiator test;
-	String baseUrl, password;
-	
-	private void initvars() {
-		baseUrl = getData("baseUrl");
-		
-	}
-	
-//	@BeforeClass
-//	public void start_test_session() {
-//		test = new MMTTestInitiator(); 
-//		initvars();
-//		//test.launchMyApplication();
-//		
-//	}
-	
-	
-	@Test(priority=1)
+	@Test(priority=1,enabled = false)
 	public void launchApplication() throws Throwable {
 		basicCourse.launchApplicationUrl();
-		Thread.sleep(2000);
 		String url = basicCourse.getCurrentURL();
-		System.out.println(url);
-		Thread.sleep(5000);
+		Assert.assertEquals(url, "https://www.makemytrip.com/");
+		basicCourse.clickOnLogin();
 		basicCourse.clickGoogleLogin();
-		Thread.sleep(5000);
-		//Assert.assertEquals(basicCourse.getPageTitle(), "Welcome - T.A.T.O.C");
+		basicCourse.switchWindow();
+
+	
 	}
 	
-//	@Test(priority=2)
-//	public void navigateToBasicCourse() throws Throwable {
-//		basicCourse.navigateToBasicCourse();
-//		Assert.assertEquals(basicCourse.getGridHeader(), "Grid Gate");
-//	}
-//	
-//	@Test
-//	public void verify_LoginPage() {
-//		
-//		String url = test.getCurrentURL();
-//		System.out.println(url);
-//		Assert.assertEquals(url, "");
-//		test.basiccourse.clickOnLogin();
-//		test.basiccourse.clickGoogleLogin();
-//		
-//	}
-	
+	@Test(priority=2, enabled = true)
+	public void navigateToFlights() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectFlights();
+		basicCourse.selectTrip();
+		basicCourse.selectCity();
+		basicCourse.selectDateCalendar();
+		Thread.sleep(3000);
+		basicCourse.btnSearch();
+		Thread.sleep(3000);
+	}
+
 	}

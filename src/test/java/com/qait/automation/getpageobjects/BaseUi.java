@@ -32,10 +32,7 @@ import org.testng.Reporter;
 import com.qait.automation.utils.ConfigPropertyReader;
 import com.qait.automation.utils.SeleniumWait;
 
-/**
- *
- * @author prashantshukla
- */
+
 public class BaseUi {
 
 	protected WebDriver driver;
