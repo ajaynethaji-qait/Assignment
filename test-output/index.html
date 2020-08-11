@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite1" class="navigator-link">
-              <span class="suite-name border-skipped">Suite1</span>
+              <span class="suite-name border-failed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite1" class="hide-methods skipped suite-Suite1"> (hide)</a> <!-- hide-methods skipped suite-Suite1 -->
-                      <a href="#" panel-name="suite-Suite1" class="show-methods skipped suite-Suite1"> (show)</a> <!-- show-methods skipped suite-Suite1 -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite1">
+                    <div class="method-list-content failed suite-Suite1">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite1" title="com.qait.tests.BasicCourseTest" class="method navigator-link" hash-for-method="verify_LoginPage">verify_LoginPage</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite1" title="com.qait.tests.BasicCourseTest" class="method navigator-link" hash-for-method="launchApplication">launchApplication</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite1 -->
+                    </div> <!-- method-list-content failed suite-Suite1 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,31 +117,32 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-skipped">
+          <div class="suite-Suite1-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.qait.tests.BasicCourseTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verify_LoginPage">
-                  </a> <!-- verify_LoginPage -->
-                  <span class="method-name">verify_LoginPage</span>
+                  <a name="launchApplication">
+                  </a> <!-- launchApplication -->
+                  <span class="method-name">launchApplication</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at com.qait.automation.TestSessionInitiator._configureBrowser(TestSessionInitiator.java:128)
-	at com.qait.automation.MMTTestInitiator.&lt;init&gt;(MMTTestInitiator.java:21)
-	at com.qait.tests.BasicCourseTest.start_test_session(BasicCourseTest.java:25)
+	at com.qait.keywords.BasicCourseActions.clickGoogleLogin(BasicCourseActions.java:33)
+	at com.qait.tests.BasicCourseTest.launchApplication(BasicCourseTest.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:766)
 	at org.testng.TestRunner.run(TestRunner.java:587)
@@ -163,7 +164,7 @@
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-skipped -->
+          </div> <!-- suite-Suite1-class-failed -->
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -218,14 +219,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verify_LoginPage')
+data.setCell(0, 1, 'launchApplication')
 data.setCell(0, 2, 'com.qait.tests.BasicCourseTest')
-data.setCell(0, 3, 0);
+data.setCell(0, 3, 9703);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -258,29 +259,25 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">launchMyApplication</span>
-                <span class="method-start">63 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="configuration-class before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">start_test_session</span>
-                <span class="method-start">6515 ms</span>
+                <span class="method-start">57 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">logTestMethod(public void com.qait.tests.BasicCourseTest.verify_LoginPage())</span>
-                <span class="method-start">6621 ms</span>
+                <span class="method-name">logTestMethod(public void com.qait.tests.BasicCourseTest.launchApplication() throws java.lang.Throwable)</span>
+                <span class="method-start">6363 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verify_LoginPage</span>
-                <span class="method-start">6631 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">6365 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">take_screenshot_on_failure([TestResult name={null} status=CREATED method=BasicCourseTest.verify_LoginPage()[pri:0, instance:com...)</span>
-                <span class="method-start">6753 ms</span>
+                <span class="method-name">take_screenshot_on_failure([TestResult name=launchApplication status=FAILURE method=BasicCourseTest.launchApplication()[pri:1, ...)</span>
+                <span class="method-start">16090 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">stop_test_session</span>
-                <span class="method-start">6761 ms</span>
+                <span class="method-start">16872 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

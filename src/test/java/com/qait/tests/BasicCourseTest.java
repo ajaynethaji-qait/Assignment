@@ -1,6 +1,5 @@
 package com.qait.tests;
 
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,36 +19,42 @@ public class BasicCourseTest extends TestSessionInitiator{
 		
 	}
 	
-	@BeforeClass
-	public void start_test_session() {
-		test = new MMTTestInitiator(); 
-		initvars();
-		test.launchMyApplication();
-		
+//	@BeforeClass
+//	public void start_test_session() {
+//		test = new MMTTestInitiator(); 
+//		initvars();
+//		//test.launchMyApplication();
+//		
+//	}
+	
+	
+	@Test(priority=1)
+	public void launchApplication() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		Thread.sleep(2000);
+		String url = basicCourse.getCurrentURL();
+		System.out.println(url);
+		Thread.sleep(5000);
+		basicCourse.clickGoogleLogin();
+		Thread.sleep(5000);
+		//Assert.assertEquals(basicCourse.getPageTitle(), "Welcome - T.A.T.O.C");
 	}
 	
-	
-//	@Test(priority=1)
-//	public void launchApplication() throws Throwable {
-//		basicCourse.launchApplicationUrl();
-//		Assert.assertEquals(basicCourse.getPageTitle(), "Welcome - T.A.T.O.C");
-//	}
-//	
 //	@Test(priority=2)
 //	public void navigateToBasicCourse() throws Throwable {
 //		basicCourse.navigateToBasicCourse();
 //		Assert.assertEquals(basicCourse.getGridHeader(), "Grid Gate");
 //	}
-	
-	@Test
-	public void verify_LoginPage() {
-		
-		String url = test.getCurrentURL();
-		System.out.println(url);
-		Assert.assertEquals(url, "");
-		test.basiccourse.clickOnLogin();
-		test.basiccourse.clickGoogleLogin();
-		
-	}
+//	
+//	@Test
+//	public void verify_LoginPage() {
+//		
+//		String url = test.getCurrentURL();
+//		System.out.println(url);
+//		Assert.assertEquals(url, "");
+//		test.basiccourse.clickOnLogin();
+//		test.basiccourse.clickGoogleLogin();
+//		
+//	}
 	
 	}

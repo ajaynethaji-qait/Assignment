@@ -58,7 +58,7 @@ public class BaseUi {
 		return message;
 	}
 
-	protected String getCurrentURL() {
+	public String getCurrentURL() {
 		return driver.getCurrentUrl();
 	}
 
