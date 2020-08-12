@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[[INFO]: The test Browser is CHROME !!!]]>
     </line>
     <line>
-      <![CDATA[[INFO]: Save Image File Path : C:\Users\P.LENIN\Downloads\Session-8\Session-8\./target/screenshots/\BasicCourseTest\2020_08_11_12_03_am\screenshot.jpg]]>
+      <![CDATA[Login page gets opened]]>
+    </line>
+    <line>
+      <![CDATA[[ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!]]>
+    </line>
+    <line>
+      <![CDATA[[INFO]: Save Image File Path : C:\Users\P.LENIN\Downloads\Session-8\Session-8\./target/screenshots/\BasicCourseTest\2020_08_12_11_10_am\screenshot.jpg]]>
     </line>
     <line>
       <![CDATA[[INFO]: The Test: BASICCOURSETEST COMPLETED!
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2020-08-11T00:03:18 IST" name="Suite1" finished-at="2020-08-11T00:03:38 IST" duration-ms="20660">
+  <suite started-at="2020-08-12T11:09:23 IST" name="Suite1" finished-at="2020-08-12T11:10:57 IST" duration-ms="93837">
     <groups>
     </groups>
-    <test started-at="2020-08-11T00:03:18 IST" name="Nopackage" finished-at="2020-08-11T00:03:38 IST" duration-ms="20660">
+    <test started-at="2020-08-12T11:09:23 IST" name="Nopackage" finished-at="2020-08-12T11:10:57 IST" duration-ms="93837">
       <class name="com.qait.tests.BasicCourseTest">
-        <test-method is-config="true" signature="TestSessionInitiators()[pri:0, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:18 IST" name="TestSessionInitiators" finished-at="2020-08-11T00:03:18 IST" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="TestSessionInitiators()[pri:0, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:09:23 IST" name="TestSessionInitiators" finished-at="2020-08-12T11:09:23 IST" duration-ms="28" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSessionInitiators -->
-        <test-method is-config="true" signature="launchMyApplication()[pri:0, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:18 IST" name="launchMyApplication" finished-at="2020-08-11T00:03:24 IST" duration-ms="6288" status="PASS">
+        <test-method is-config="true" signature="launchMyApplication()[pri:0, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:09:23 IST" name="launchMyApplication" finished-at="2020-08-12T11:09:29 IST" duration-ms="6275" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO]: The test Browser is CHROME !!!]]>
             </line>
           </reporter-output>
         </test-method> <!-- launchMyApplication -->
-        <test-method is-config="true" signature="logTestMethod(java.lang.reflect.Method)[pri:0, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:24 IST" name="logTestMethod" finished-at="2020-08-11T00:03:24 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="logTestMethod(java.lang.reflect.Method)[pri:0, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:09:29 IST" name="logTestMethod" finished-at="2020-08-12T11:09:29 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.qait.tests.BasicCourseTest.launchApplication() throws java.lang.Throwable]]>
+                <![CDATA[public void com.qait.tests.BasicCourseTest.navigateToFlights() throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logTestMethod -->
-        <test-method signature="launchApplication()[pri:1, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:24 IST" name="launchApplication" finished-at="2020-08-11T00:03:34 IST" duration-ms="9703" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="navigateToFlights()[pri:2, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:09:29 IST" name="navigateToFlights" finished-at="2020-08-12T11:10:53 IST" duration-ms="83080" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[[ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.qait.keywords.BasicCourseActions.clickGoogleLogin(BasicCourseActions.java:33)
-at com.qait.tests.BasicCourseTest.launchApplication(BasicCourseTest.java:38)
+              <![CDATA[java.lang.AssertionError: [ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!
+at org.testng.Assert.fail(Assert.java:97)
+at com.qait.automation.getpageobjects.GetPage.element(GetPage.java:146)
+at com.qait.automation.getpageobjects.GetPage.element(GetPage.java:133)
+at com.qait.keywords.BasicCourseActions.btnViewPrice(BasicCourseActions.java:146)
+at com.qait.tests.BasicCourseTest.navigateToFlights(BasicCourseTest.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -75,25 +87,31 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
+            <line>
+              <![CDATA[Login page gets opened]]>
+            </line>
+            <line>
+              <![CDATA[[ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="take_screenshot_on_failure(org.testng.ITestResult)[pri:0, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:34 IST" name="take_screenshot_on_failure" finished-at="2020-08-11T00:03:35 IST" duration-ms="781" status="PASS">
+        </test-method> <!-- navigateToFlights -->
+        <test-method is-config="true" signature="take_screenshot_on_failure(org.testng.ITestResult)[pri:0, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:10:53 IST" name="take_screenshot_on_failure" finished-at="2020-08-12T11:10:53 IST" duration-ms="551" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=launchApplication status=FAILURE method=BasicCourseTest.launchApplication()[pri:1, instance:com.qait.tests.BasicCourseTest@4f209819] output={null}]]]>
+                <![CDATA[[TestResult name=navigateToFlights status=FAILURE method=BasicCourseTest.navigateToFlights()[pri:2, instance:com.qait.tests.BasicCourseTest@15eb5ee5] output=Login page gets opened]]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[[INFO]: Save Image File Path : C:\Users\P.LENIN\Downloads\Session-8\Session-8\./target/screenshots/\BasicCourseTest\2020_08_11_12_03_am\screenshot.jpg]]>
+              <![CDATA[[INFO]: Save Image File Path : C:\Users\P.LENIN\Downloads\Session-8\Session-8\./target/screenshots/\BasicCourseTest\2020_08_12_11_10_am\screenshot.jpg]]>
             </line>
           </reporter-output>
         </test-method> <!-- take_screenshot_on_failure -->
-        <test-method is-config="true" signature="stop_test_session()[pri:0, instance:com.qait.tests.BasicCourseTest@4f209819]" started-at="2020-08-11T00:03:35 IST" name="stop_test_session" finished-at="2020-08-11T00:03:38 IST" duration-ms="3819" status="PASS">
+        <test-method is-config="true" signature="stop_test_session()[pri:0, instance:com.qait.tests.BasicCourseTest@15eb5ee5]" started-at="2020-08-12T11:10:53 IST" name="stop_test_session" finished-at="2020-08-12T11:10:57 IST" duration-ms="3829" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO]: The Test: BASICCOURSETEST COMPLETED!

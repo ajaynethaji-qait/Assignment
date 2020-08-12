@@ -93,9 +93,10 @@ public class BasicCourseActions extends GetPage {
 		element("tab_CharterFlights").click();
 	}
 
-	public void selectCity() {
+	public void selectCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
 		element("to_City").sendKeys(YamlReader.getData("to_City"));
+		Thread.sleep(3000);
 		element("city_Chennai").click();
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
@@ -131,6 +132,18 @@ public class BasicCourseActions extends GetPage {
 
 	public void btnSearch() {
 		element("btn_Search").click();
+	}
+	
+	public void checkbox_Stops() {
+		element("checkbox_Nonstop").click();
+	}
+	
+	public void checkbox_Flight() {
+		element("checkbox_Flight").click();
+	}
+	
+	public void btnViewPrice() {
+		element("btn_ViewPrices").click();
 	}
 	
 }

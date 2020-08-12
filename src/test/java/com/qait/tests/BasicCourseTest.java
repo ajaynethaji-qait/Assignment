@@ -32,6 +32,11 @@ public class BasicCourseTest extends TestSessionInitiator{
 		Thread.sleep(3000);
 		basicCourse.btnSearch();
 		Thread.sleep(3000);
+		basicCourse.checkbox_Stops();
+		Thread.sleep(1000);
+		basicCourse.checkbox_Flight();
+		Thread.sleep(1000);
+		basicCourse.btnViewPrice();
 	}
 
 	}
