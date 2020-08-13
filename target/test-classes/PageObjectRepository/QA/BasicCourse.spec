@@ -33,8 +33,10 @@ view_Bus                    xpath       //a[@id='toggle_buses']
 txt_TravelBlog              xpath       //div[@class='makeFlex column blackText latoBold appendBottom20']
 btn_ViewTravelBlog          xpath       //a[@class=' makeFlex hrtlCenter font16 blueText latoBlack appendRight20' and text()='VIEW ALL']
 btn_Blog                    xpath       (//div[@class='header_logo_top'])[2]
-
-
+bus_Calendar                xpath       //div[@class='DayPicker-wrapper']//div[1]//div//div//div
+flight_Calendar             xpath       //div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div//div[1]//p[1]
+hotel_Calendar              xpath       //div[@class='DayPicker-wrapper']//div[1]//div//div//div
+trip_OneWay                 xpath       //ul[@class='fswTabs latoBlack greyText']                     
 
 
 ===================================================================================================================

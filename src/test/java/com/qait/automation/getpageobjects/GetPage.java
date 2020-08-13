@@ -516,4 +516,8 @@ public class GetPage extends BaseUi {
 			baseUrl = getData("bg_ax_base_url");
 		}
 	}
+	
 }
+
+
+
