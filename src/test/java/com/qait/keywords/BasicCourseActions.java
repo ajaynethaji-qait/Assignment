@@ -3,11 +3,15 @@ package com.qait.keywords;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.qait.automation.getpageobjects.GetPage;
 import com.qait.automation.utils.YamlReader;
+
+import junit.framework.Assert;
 
 public class BasicCourseActions extends GetPage {
 
@@ -97,7 +101,8 @@ public class BasicCourseActions extends GetPage {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
 		element("to_City").sendKeys(YamlReader.getData("to_City"));
 		Thread.sleep(3000);
-		element("city_Chennai").click();
+		element("city_Kanpur").click();
+		logMessage("City gets selected");
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
 	}
@@ -132,6 +137,7 @@ public class BasicCourseActions extends GetPage {
 
 	public void btnSearch() {
 		element("btn_Search").click();
+		logMessage("Search results displayed");
 	}
 	
 	public void checkbox_Stops() {
@@ -144,6 +150,71 @@ public class BasicCourseActions extends GetPage {
 	
 	public void btnViewPrice() {
 		element("btn_ViewPrices").click();
+	}
+	
+	public void selectDateCalendarHotel() throws InterruptedException {
+		//element("date_BusTravel").click();
+		String exp_date="29";
+		List<WebElement> dates = driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
+		for (WebElement ele : dates) {
+			System.out.println(ele);
+			String date_text = ele.getText();
+			String date[] = date_text.split("\n");
+			if (date[0].equals(exp_date)) {
+				ele.click();
+				break;
+			} 
+	
+		}
+	}
+	
+	public void selectHotelCity() throws InterruptedException {
+		//element("lbl_City").click();
+		element("input_City").sendKeys(YamlReader.getData("City"));
+		Thread.sleep(3000);
+		element("hotel_City").click();
+	}
+	
+	public void selectDateCalendarBus() throws InterruptedException {
+		//element("date_BusTravel").click();
+		String exp_date="29";
+		List<WebElement> dates = driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
+		for (WebElement ele : dates) {
+			String date_text = ele.getText();
+			String date[] = date_text.split("\n");
+			if (date[0].equals(exp_date)) {
+				ele.click();
+				break;
+			} 
+	
+		}
+	}
+	
+	public void clickSearchBuses() {
+		element("btn_SearchBuses").click();
+		logMessage("Search results displayed");
+		
+	}
+	
+	public String publicTransport() {
+		return element("bus_Transport").getText();
+	}
+	
+	public void clickViewBus() {
+		element("view_Bus").click();
+		logMessage("Bus results displayed");
+		
+	}
+	
+	public String textTravelBlog() {
+		return element("txt_TravelBlog").getText();
+		
+	}
+	
+	public void clickViewTravelBlog() {
+		element("btn_ViewTravelBlog").click();
+		logMessage("Blog Page displayed");
+		
 	}
 	
 }

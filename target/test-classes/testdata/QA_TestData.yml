@@ -2,8 +2,10 @@ app_url: https://www.makemytrip.com/
 username: 123
 password: 123
 
-to_City: Chennai, India
+to_City: Kanpur, Uttar Pradesh
 from_City: Delhi, India
+
+City: kasol
 
 ProjectName: Sample V8 Demo
 credentials:

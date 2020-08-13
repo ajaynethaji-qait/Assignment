@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Suite1">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite1" title="com.qait.tests.BasicCourseTest" class="method navigator-link" hash-for-method="navigateToFlights">navigateToFlights</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite1" title="com.qait.tests.BasicCourseTest" class="method navigator-link" hash-for-method="verifyTravelBlogText">verifyTravelBlogText</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite1 -->
@@ -125,15 +125,15 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="navigateToFlights">
-                  </a> <!-- navigateToFlights -->
-                  <span class="method-name">navigateToFlights</span>
-                  <div class="stack-trace">java.lang.AssertionError: [ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!
+                  <a name="verifyTravelBlogText">
+                  </a> <!-- verifyTravelBlogText -->
+                  <span class="method-name">verifyTravelBlogText</span>
+                  <div class="stack-trace">java.lang.AssertionError: [ASSERT FAILED]: Element txt_TravelBlog not found on the BasicCourse !!!
 	at org.testng.Assert.fail(Assert.java:97)
 	at com.qait.automation.getpageobjects.GetPage.element(GetPage.java:146)
 	at com.qait.automation.getpageobjects.GetPage.element(GetPage.java:133)
-	at com.qait.keywords.BasicCourseActions.btnViewPrice(BasicCourseActions.java:146)
-	at com.qait.tests.BasicCourseTest.navigateToFlights(BasicCourseTest.java:39)
+	at com.qait.keywords.BasicCourseActions.textTravelBlog(BasicCourseActions.java:210)
+	at com.qait.tests.BasicCourseTest.verifyTravelBlogText(BasicCourseTest.java:69)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -222,9 +222,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'navigateToFlights')
+data.setCell(0, 1, 'verifyTravelBlogText')
 data.setCell(0, 2, 'com.qait.tests.BasicCourseTest')
-data.setCell(0, 3, 83080);
+data.setCell(0, 3, 60434);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
@@ -241,22 +241,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">navigateToFlights</span>
+              <span class="reporter-method-name">verifyTravelBlogText</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Login page gets opened</span>
-                <span class="reporter-method-output">[ASSERT FAILED]: Element btn_ViewPrices not found on the BasicCourse !!!</span>
+                <span class="reporter-method-output">[ASSERT FAILED]: Element txt_TravelBlog not found on the BasicCourse !!!</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.qait.tests.BasicCourseTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">navigateToBuses</span>
+                <br/>
+                <span class="ignored-method-name">navigateToFlights</span>
+                <br/>
+                <span class="ignored-method-name">navigateToHotels</span>
+                <br/>
                 <span class="ignored-method-name">launchApplication</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -276,25 +282,25 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">launchMyApplication</span>
-                <span class="method-start">101 ms</span>
+                <span class="method-start">96 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">logTestMethod(public void com.qait.tests.BasicCourseTest.navigateToFlights() throws java.lang.Throwable)</span>
-                <span class="method-start">6387 ms</span>
+                <span class="method-name">logTestMethod(public void com.qait.tests.BasicCourseTest.verifyTravelBlogText() throws java.lang.Throwable)</span>
+                <span class="method-start">6327 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">navigateToFlights</span>
-                <span class="method-start">6391 ms</span>
+                <span class="method-name">verifyTravelBlogText</span>
+                <span class="method-start">6330 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">take_screenshot_on_failure([TestResult name=navigateToFlights status=FAILURE method=BasicCourseTest.navigateToFlights()[pri:2, ...)</span>
-                <span class="method-start">89481 ms</span>
+                <span class="method-name">take_screenshot_on_failure([TestResult name=verifyTravelBlogText status=FAILURE method=BasicCourseTest.verifyTravelBlogText()[p...)</span>
+                <span class="method-start">66772 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">stop_test_session</span>
-                <span class="method-start">90033 ms</span>
+                <span class="method-start">67244 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
