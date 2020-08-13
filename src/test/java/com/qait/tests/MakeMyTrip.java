@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class MakeMyTrip {
 	public static void main(String args[]) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
 		// Getting current date
 		Calendar cal = Calendar.getInstance();
 		// Number of Days to add

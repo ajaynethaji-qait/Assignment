@@ -94,9 +94,7 @@ public class BasicCourseActions extends GetPage {
 
 	public void selectCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
-		Thread.sleep(2000);
-		element("to_City").sendKeys(YamlReader.getData("to_City"));
-		Thread.sleep(2000);
+		element("to_City").sendKeys(YamlReader.getData("to_NewCity"));
 		element("city_Kanpur").click();
 		logMessage("City gets selected");
 //		Actions act = new Actions(driver);
@@ -120,14 +118,18 @@ public class BasicCourseActions extends GetPage {
 
 	public void selectDateCalendar() throws InterruptedException {
 		element("date_Departure").click();
-		String exp_date = "15";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		String newDate = sdf.format(cal.getTime());
+		//String exp_date = "15";
 		List<WebElement> dates = elements("flight_Calendar");
 		// List<WebElement> dates =
 		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div//div[1]//p[1]"));
 		for (WebElement ele : dates) {
 			String date_text = ele.getText();
 			String date[] = date_text.split("\n");
-			if (date[0].equals(exp_date)) {
+			if (date[0].equals(newDate)) {
 				ele.click();
 				break;
 			}
@@ -154,7 +156,11 @@ public class BasicCourseActions extends GetPage {
 
 	public void selectDateCalendarHotel() throws InterruptedException {
 		// element("date_BusTravel").click();
-		String exp_date = "29";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		String newDate = sdf.format(cal.getTime());
+		//String exp_date = "29";
 		List<WebElement> dates = elements("hotel_Calendar");
 //		List<WebElement> dates = driver
 //				.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
@@ -162,7 +168,7 @@ public class BasicCourseActions extends GetPage {
 			System.out.println(ele);
 			String date_text = ele.getText();
 			String date[] = date_text.split("\n");
-			if (date[0].equals(exp_date)) {
+			if (date[0].equals(newDate)) {
 				ele.click();
 				break;
 			}
@@ -173,20 +179,22 @@ public class BasicCourseActions extends GetPage {
 	public void selectHotelCity() throws InterruptedException {
 		// element("lbl_City").click();
 		element("input_City").sendKeys(YamlReader.getData("City"));
-		Thread.sleep(3000);
 		element("hotel_City").click();
 	}
 
 	public void selectDateCalendarBus() throws InterruptedException {
-		// element("date_BusTravel").click();
-		String exp_date = "29";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		String newDate = sdf.format(cal.getTime());
+		// String exp_date = "29";
 		List<WebElement> dates = elements("bus_Calendar");
 		// List<WebElement> dates =
 		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
 		for (WebElement ele : dates) {
 			String date_text = ele.getText();
 			String date[] = date_text.split("\n");
-			if (date[0].equals(exp_date)) {
+			if (date[0].equals(newDate)) {
 				ele.click();
 				break;
 			}
@@ -220,29 +228,14 @@ public class BasicCourseActions extends GetPage {
 		logMessage("Blog Page displayed");
 
 	}
-
-	public void selectDateNewCalendar() throws InterruptedException {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		// Getting current date
-		Calendar cal = Calendar.getInstance();
-		// Number of Days to add
-		cal.add(Calendar.DAY_OF_MONTH, 7);
-		String newDate = sdf.format(cal.getTime());
-		// Displaying the new Date after addition of Days to current date
-		System.out.println("Date after Addition: " + newDate);
-
-		// String exp_date = "29";
-		List<WebElement> dates = elements("bus_Calendar");
-		// List<WebElement> dates =
-		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
-		for (WebElement ele : dates) {
-			String date_text = ele.getText();
-			String date[] = date_text.split("\n");
-			if (date[0].equals(newDate)) {
-				ele.click();
-				break;
-			}
-
-		}
+	
+	public void selectBusCity() throws InterruptedException {
+		element("from_City").sendKeys(YamlReader.getData("from_City"));
+		element("to_City").sendKeys(YamlReader.getData("to_City"));
+		element("city_Kanpur").click();
+		logMessage("City gets selected");
+//		Actions act = new Actions(driver);
+//		act.sendKeys(Keys.TAB).build().perform();
 	}
+
 }

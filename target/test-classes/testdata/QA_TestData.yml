@@ -2,6 +2,7 @@ app_url: https://www.makemytrip.com/
 username: 123
 password: 123
 
+to_NewCity: Chennai, India
 to_City: Kanpur, Uttar Pradesh
 from_City: Delhi, India
 

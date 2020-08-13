@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.qait.automation.TestSessionInitiator;
 
-
 public class BasicCourseTest extends TestSessionInitiator {
 
 	@Test(priority = 1, enabled = false)
@@ -45,10 +44,8 @@ public class BasicCourseTest extends TestSessionInitiator {
 	public void navigateToBuses() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectBuses();
-		basicCourse.selectCity();
-		Thread.sleep(2000);
+		basicCourse.selectBusCity();
 		basicCourse.selectDateCalendarBus();
-		Thread.sleep(2000);
 		basicCourse.clickSearchBuses();
 		String str = basicCourse.publicTransport();
 		Assert.assertEquals(str, "State Transports");
@@ -57,7 +54,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 	}
 
 	@Test(priority = 3, enabled = false)
-	public void verifyTravelBlogText() throws Throwable{
+	public void verifyTravelBlogText() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		String txt = basicCourse.textTravelBlog();
 		String news = txt.replace("VIEW ALL", "").trim();
@@ -65,6 +62,6 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.clickViewTravelBlog();
 		String url = basicCourse.getCurrentURL();
 		Assert.assertEquals(url, "https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories");
-		
+
 	}
 }
