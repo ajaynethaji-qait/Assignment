@@ -95,7 +95,7 @@ public class BasicCourseActions extends GetPage {
 	public void selectCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
 		element("to_City").sendKeys(YamlReader.getData("to_NewCity"));
-		element("city_Kanpur").click();
+		element("city_Chennai").click();
 		logMessage("City gets selected");
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
@@ -236,6 +236,10 @@ public class BasicCourseActions extends GetPage {
 		logMessage("City gets selected");
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
+	}
+	
+	public String getTextCity() {
+		return element("read_City").getText();
 	}
 
 }

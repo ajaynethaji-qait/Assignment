@@ -3,6 +3,7 @@ package com.qait.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.qait.automation.TestSessionInitiator;
+import com.qait.automation.utils.YamlReader;
 
 public class BasicCourseTest extends TestSessionInitiator {
 
@@ -25,6 +26,10 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.selectCity();
 		basicCourse.selectDateCalendar();
 		basicCourse.btnSearch();
+		String txt = basicCourse.getTextCity();
+		String news = txt.replace("Flights from", "").trim();
+		String str = news.replace("to Chennai", "").trim();
+		Assert.assertEquals(str, YamlReader.getData("to_city"));
 		basicCourse.checkbox_Stops();
 		basicCourse.checkbox_Flight();
 		basicCourse.btnViewPrice();
@@ -40,12 +45,15 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void navigateToBuses() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectBuses();
 		basicCourse.selectBusCity();
-		basicCourse.selectDateCalendarBus();
+     	basicCourse.selectDateCalendarBus();
+     	String txt = basicCourse.getTextCity();
+		System.out.println(txt);
+     //	Assert.assertEquals(txt, YamlReader.getData("to_City"));
 		basicCourse.clickSearchBuses();
 		String str = basicCourse.publicTransport();
 		Assert.assertEquals(str, "State Transports");
@@ -53,7 +61,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void verifyTravelBlogText() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		String txt = basicCourse.textTravelBlog();

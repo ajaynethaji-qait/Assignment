@@ -6,12 +6,15 @@ to_NewCity: Chennai, India
 to_City: Kanpur, Uttar Pradesh
 from_City: Delhi, India
 
+
 City: kasol
 
 ProjectName: Sample V8 Demo
 credentials:
   email: xyz@gmail.com
   password: Password@123
+  
+to_city: New Delhi
 
 email:
     send: yes
