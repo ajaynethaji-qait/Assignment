@@ -241,5 +241,11 @@ public class BasicCourseActions extends GetPage {
 	public String getTextCity() {
 		return element("read_City").getText();
 	}
+	
+	public String getTextCityBus() {
+		return element("to_City").getAttribute("value");
+		//to_City
+	}
+	
 
 }

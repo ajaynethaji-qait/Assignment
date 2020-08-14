@@ -45,15 +45,14 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void navigateToBuses() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectBuses();
 		basicCourse.selectBusCity();
-     	basicCourse.selectDateCalendarBus();
-     	String txt = basicCourse.getTextCity();
-		System.out.println(txt);
-     //	Assert.assertEquals(txt, YamlReader.getData("to_City"));
+		basicCourse.selectDateCalendarBus();
+		String txt = basicCourse.getTextCityBus();
+		Assert.assertEquals(txt, YamlReader.getData("to_City"));
 		basicCourse.clickSearchBuses();
 		String str = basicCourse.publicTransport();
 		Assert.assertEquals(str, "State Transports");
@@ -61,7 +60,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void verifyTravelBlogText() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		String txt = basicCourse.textTravelBlog();
