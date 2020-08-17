@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -94,8 +96,11 @@ public class BasicCourseActions extends GetPage {
 
 	public void selectCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
+		Thread.sleep(1000);
 		element("to_City").sendKeys(YamlReader.getData("to_NewCity"));
+		Thread.sleep(1000);
 		element("city_Chennai").click();
+		Thread.sleep(1000);
 		logMessage("City gets selected");
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
@@ -122,7 +127,7 @@ public class BasicCourseActions extends GetPage {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DAY_OF_MONTH, 7);
 		String newDate = sdf.format(cal.getTime());
-		//String exp_date = "15";
+		// String exp_date = "15";
 		List<WebElement> dates = elements("flight_Calendar");
 		// List<WebElement> dates =
 		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div//div[1]//p[1]"));
@@ -160,7 +165,7 @@ public class BasicCourseActions extends GetPage {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DAY_OF_MONTH, 7);
 		String newDate = sdf.format(cal.getTime());
-		//String exp_date = "29";
+		// String exp_date = "29";
 		List<WebElement> dates = elements("hotel_Calendar");
 //		List<WebElement> dates = driver
 //				.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
@@ -180,6 +185,7 @@ public class BasicCourseActions extends GetPage {
 		// element("lbl_City").click();
 		element("input_City").sendKeys(YamlReader.getData("City"));
 		element("hotel_City").click();
+
 	}
 
 	public void selectDateCalendarBus() throws InterruptedException {
@@ -228,7 +234,7 @@ public class BasicCourseActions extends GetPage {
 		logMessage("Blog Page displayed");
 
 	}
-	
+
 	public void selectBusCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
 		element("to_City").sendKeys(YamlReader.getData("to_City"));
@@ -237,15 +243,127 @@ public class BasicCourseActions extends GetPage {
 //		Actions act = new Actions(driver);
 //		act.sendKeys(Keys.TAB).build().perform();
 	}
-	
+
 	public String getTextCity() {
 		return element("read_City").getText();
 	}
-	
+
 	public String getTextCityBus() {
 		return element("to_City").getAttribute("value");
-		//to_City
+		// to_City
 	}
-	
+
+	public void selectDateCalendarVisa() throws InterruptedException {
+		element("charter_CalendarDt").click();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		String newDate = sdf.format(cal.getTime());
+		List<WebElement> dates = elements("charter_Calendar");
+		for (WebElement ele : dates) {
+			String date_text = ele.getText();
+			String date[] = date_text.split("\n");
+			if (date[0].equals(newDate)) {
+				ele.click();
+				break;
+			}
+
+		}
+
+	}
+
+	public void btnSearchCharter() {
+		element("btn_SearchCharter").click();
+		logMessage("Search results displayed");
+	}
+
+	public void checkbox() {
+		element("checkbox_HeavyJet").click();
+		logMessage("Aircraft Type Selected");
+	}
+
+	// checkbox_FlightAttendant
+	public void selectTime() {
+		List<WebElement> details = elements("charter_Time");
+		for (WebElement element : details) {
+			String time_text = element.getText();
+			String date[] = time_text.split("\n");
+			System.out.println(date);
+			if (date[0].equals("11:00 AM")) {
+				element.click();
+				break;
+			}
+		}
+	}
+
+	public void selectPassengerCount() {
+		List<WebElement> details = elements("passenger_Cnt");
+		for (WebElement webElement : details) {
+			String date_text = webElement.getText();
+			if (webElement.getText().equals("2")) {
+				webElement.click();
+			}
+		}
+	}
+
+	public void selectCityCabs() throws InterruptedException {
+		element("from_City").sendKeys(YamlReader.getData("from_City"));
+		Thread.sleep(1000);
+		element("to_City").sendKeys(YamlReader.getData("to_Place"));
+		Thread.sleep(1000);
+		element("select_City").click();
+		Thread.sleep(1000);
+		logMessage("City gets selected");
+//		Actions act = new Actions(driver);
+//		act.sendKeys(Keys.TAB).build().perform();
+	}
+
+	public void selectDateCalendarCabs() throws InterruptedException {
+		element("select_CabCalendar").click();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		String newDate = sdf.format(cal.getTime());
+		List<WebElement> dates = elements("cabs_Calendar");
+		for (WebElement ele : dates) {
+			String date_text = ele.getText();
+			String date[] = date_text.split("\n");
+			if (date[0].equals(newDate)) {
+				ele.click();
+				break;
+			}
+
+		}
+
+	}
+
+	public void selectCabTime() {
+		element("select_CabTime").click();
+
+		List<WebElement> details = elements("cab_Time");
+		for (WebElement element : details) {
+
+			String time_text = element.getText();
+			System.out.println(time_text);
+			if (element.getText().equals("08:00 AM")) {
+				element.click();
+				break;
+
+			}
+		}
+	}
+
+	public String verifyText() {
+		return element("text_Visible").getText();
+	}
+
+	public String getlistCabs() {
+		return element("list_Cabs").getText();
+
+	}
+
+	public String getCabPrice() {
+		return element("cab_Price").getText();
+	}
 
 }

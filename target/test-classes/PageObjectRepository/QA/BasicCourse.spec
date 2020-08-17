@@ -11,7 +11,9 @@ input_Passw                 xpath       //input[@name='password']
 btn_Next                    xpath       (//div[@class='VfPpkd-RLmnJb'])[1]
 tab_FLights                 xpath       //span[@class='chNavText darkGreyText' and text()='Flights']
 tab_Hotels                  xpath       //span[@class='chNavText darkGreyText' and text()='Hotels']
+tab_CharterFlights          xpath       //span[@class='chNavText darkGreyText' and text()='Charter Flights']
 tab_Buses                   xpath       //span[@class='chNavText darkGreyText' and text()='Buses']
+tab_Cabs                    xpath       //span[@class='chNavText darkGreyText' and text()='Cabs']
 from_City                   xpath       //input[@id='fromCity']
 to_City                     xpath       //input[@id='toCity']
 city_Chennai                xpath       //p[@class='font14 appendBottom5 blackText' and text()='Chennai, India']
@@ -38,6 +40,22 @@ flight_Calendar             xpath       //div[@class='DayPicker-wrapper']//div[1
 hotel_Calendar              xpath       //div[@class='DayPicker-wrapper']//div[1]//div//div//div
 trip_OneWay                 xpath       //ul[@class='fswTabs latoBlack greyText']       
 read_City                   xpath       //p[@class='font22 text-black append_bottom20 cards-heading']    
-
+charter_Calendar            xpath       //body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div/div/div[1]/p[1]
+btn_SearchCharter           xpath       //a[@class='primaryBtn font24 latoBold widgetSearchBtn']
+checkbox_HeavyJet           xpath       (//p[@class='flexOne makeFlex spaceBetween'])[10]
+checkbox_FlightAttendant    xpath       (//p[@class='flexOne makeFlex spaceBetween'])[1]
+charter_CalendarDt          xpath       //span[@class='lbl_input latoBold appendBottom10 abctest' and text()='DEPARTURE Date & time'] 
+charter_Time                xpath       //ul[@class='timeList'] 
+passengers_Count            xpath       //span[@class='lbl_input latoBold appendBottom10' and text()='Passengers'] 
+passenger_Cnt               xpath       //ul[@class='passengerList font12 darkText']
+cabs_Calendar               xpath       //div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div
+cabs_Time                   xpath       //ul[@class='timeDropDown blackText'] 
+select_City                 xpath       (//span[@class='sr_city blackText'])[1] 
+select_CabCalendar          xpath       (//span[@class='lbl_input latoBold appendBottom10'])[1] 
+select_CabTime              xpath       (//span[@class='lbl_input latoBold appendBottom10'])[3]
+text_Visible                xpath       //p[@class='latoBlack font20 blackText appendBottom20' and text()='Why Book With Us'] 
+list_Cabs                   xpath       (//span[@class='latoBlack makeFlex hrtlCenter'])[1]
+cab_Price                   xpath       (//p[@class='font28 latoBlack blackText appendBottom5'])[1]
+cab_Time                    xpath       //div[@class='widgetSection appendBottom40']//li
 
 ===================================================================================================================

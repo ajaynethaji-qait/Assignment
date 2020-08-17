@@ -1,5 +1,8 @@
 package com.qait.tests;
 
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.qait.automation.TestSessionInitiator;
@@ -45,7 +48,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void navigateToBuses() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectBuses();
@@ -70,5 +73,34 @@ public class BasicCourseTest extends TestSessionInitiator {
 		String url = basicCourse.getCurrentURL();
 		Assert.assertEquals(url, "https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories");
 
+	}
+	
+	@Test(priority = 3, enabled = false)
+	public void navigateToCharterFlights() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectCharterFlights();
+		basicCourse.selectCity();
+		basicCourse.selectDateCalendarVisa();
+		basicCourse.selectTime();
+		Thread.sleep(4000);
+		basicCourse.selectPassengerCount();
+//		basicCourse.btnSearchCharter();
+//		basicCourse.checkbox();
+	}
+	
+	@Test(priority = 3, enabled = true)
+	public void navigateToCabs() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectCabs();
+		basicCourse.selectCityCabs();
+		basicCourse.selectDateCalendarCabs();
+		basicCourse.selectCabTime();
+		basicCourse.btnSearchCharter();
+//		String txt = basicCourse.verifyText();
+//		Assert.assertEquals(txt, "Why Book With Us");
+//		String cab = basicCourse.getlistCabs();
+//		Assert.assertEquals(cab, "Indica, Swift");
+//		String cabamt = basicCourse.getCabPrice();
+//		Assert.assertEquals(cabamt, "5,329");
 	}
 }
