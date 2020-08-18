@@ -4,10 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.swing.text.html.parser.Element;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.qait.automation.getpageobjects.GetPage;
 import com.qait.automation.utils.YamlReader;
@@ -229,8 +232,12 @@ public class BasicCourseActions extends GetPage {
 
 	}
 
-	public void clickViewTravelBlog() {
-		element("btn_ViewTravelBlog").click();
+	public void clickViewTravelBlog() throws InterruptedException {
+		WebElement lblTravelBlog = driver.findElement(By.xpath("//div[@class='makeFlex column blackText latoBold appendBottom20']"));
+		WebElement lblViewAll = driver.findElement(By.xpath("//span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]"));
+		scrollDown(lblTravelBlog);
+		Thread.sleep(3000);
+		click(lblViewAll);
 		logMessage("Blog Page displayed");
 
 	}
@@ -248,7 +255,7 @@ public class BasicCourseActions extends GetPage {
 		return element("read_City").getText();
 	}
 
-	public String getTextCityBus() {
+	public String getTextCityArrv() {
 		return element("to_City").getAttribute("value");
 		// to_City
 	}
@@ -286,34 +293,40 @@ public class BasicCourseActions extends GetPage {
 	public void selectTime() {
 		List<WebElement> details = elements("charter_Time");
 		for (WebElement element : details) {
-			String time_text = element.getText();
-			String date[] = time_text.split("\n");
-			System.out.println(date);
-			if (date[0].equals("11:00 AM")) {
-				element.click();
+			//String time_text = element.getText();
+		//	String date[] = time_text.split("\n");
+		//	System.out.println(time_text);
+			if (element.getAttribute("innerHTML").equals("11:00 AM")) {
+				System.out.println(element.toString());
+				click(element);
 				break;
 			}
 		}
 	}
+	
+//	if (element.getAttribute("innerHTML").equals("12:30 AM")) {
+//		System.out.println(element.toString());
+//		scrollDown(element);
+//		click(element);
+//		break;
 
 	public void selectPassengerCount() {
+		element("passengers_Count").click();
 		List<WebElement> details = elements("passenger_Cnt");
 		for (WebElement webElement : details) {
 			String date_text = webElement.getText();
-			if (webElement.getText().equals("2")) {
-				webElement.click();
+			System.out.println(date_text);
+			if (webElement.getAttribute("innerHTML").equals("1")) {
+				click(webElement);
 			}
 		}
 	}
 
 	public void selectCityCabs() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
-		Thread.sleep(1000);
-		//element("city_Delhi").click();
+		// element("city_Delhi").click();
 		element("to_City").sendKeys(YamlReader.getData("to_Place"));
-		Thread.sleep(1000);
 		element("select_City").click();
-		Thread.sleep(1000);
 		logMessage("City gets selected");
 	}
 
@@ -342,14 +355,7 @@ public class BasicCourseActions extends GetPage {
 		List<WebElement> details = elements("cab_Time");
 		for (WebElement element : details) {
 
-			/*
-			 * String time_text = element.getText(); System.out.println(time_text);
-			 * JavascriptExecutor js = (JavascriptExecutor) driver;
-			 * //js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
-			 */ 
-			
 			if (element.getAttribute("innerHTML").equals("12:30 AM")) {
-				Thread.sleep(2000);
 				System.out.println(element.toString());
 				scrollDown(element);
 				click(element);
@@ -371,5 +377,20 @@ public class BasicCourseActions extends GetPage {
 	public String getCabPrice() {
 		return element("cab_Price").getText();
 	}
+	
+	public String getflight_Name() {
+		return element("flight_Name").getText();
+	}
+	
+	public void launchUrl() {
+		driver.get(YamlReader.getData("blog_url"));
+		logMessage("Login page gets opened");
+	}
 
+	public void btnContinueBlog() {
+		element("btn_ContinueBlogPage").click();
+		logMessage("Blog results displayed");
+	}
+
+	
 }

@@ -33,7 +33,7 @@ btn_SearchBuses             xpath       //button[@class='primaryBtn font24 latoB
 bus_Transport               xpath       //span[@class='sc-gPEVay fmZOdU' and text()='State Transports'] 
 view_Bus                    xpath       //a[@id='toggle_buses']
 txt_TravelBlog              xpath       //div[@class='makeFlex column blackText latoBold appendBottom20']
-btn_ViewTravelBlog          xpath       //a[@class=' makeFlex hrtlCenter font16 blueText latoBlack appendRight20' and text()='VIEW ALL']
+btn_ViewTravelBlog          xpath       //span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]
 btn_Blog                    xpath       (//div[@class='header_logo_top'])[2]
 bus_Calendar                xpath       //div[@class='DayPicker-wrapper']//div[1]//div//div//div
 flight_Calendar             xpath       //div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div//div[1]//p[1]
@@ -45,9 +45,9 @@ btn_SearchCharter           xpath       //a[@class='primaryBtn font24 latoBold w
 checkbox_HeavyJet           xpath       (//p[@class='flexOne makeFlex spaceBetween'])[10]
 checkbox_FlightAttendant    xpath       (//p[@class='flexOne makeFlex spaceBetween'])[1]
 charter_CalendarDt          xpath       //span[@class='lbl_input latoBold appendBottom10 abctest' and text()='DEPARTURE Date & time'] 
-charter_Time                xpath       //ul[@class='timeList'] 
+charter_Time                xpath       //ul[@class='timeList']//li
 passengers_Count            xpath       //span[@class='lbl_input latoBold appendBottom10' and text()='Passengers'] 
-passenger_Cnt               xpath       //ul[@class='passengerList font12 darkText']
+passenger_Cnt               xpath       //ul[@class='passengerList font12 darkText']//li
 cabs_Calendar               xpath       //div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div
 cabs_Time                   xpath       //ul[@class='timeDropDown blackText'] 
 select_City                 xpath       (//span[@class='sr_city blackText'])[1] 
@@ -58,7 +58,8 @@ list_Cabs                   xpath       (//span[@class='latoBlack makeFlex hrtlC
 cab_Price                   xpath       (//p[@class='font28 latoBlack blackText appendBottom5'])[1]
 cab_Time                    xpath       //ul[@class='timeDropDown blackText']/li
 city_Delhi                  xpath       //span[@class='sr_city blackText' and text()='Delhi, India']
-
+flight_Name                 xpath       //p[@class='charterListTitle' and text()='Pilatus PC 12']
+btn_ContinueBlogPage        xpath       //a[contains(@class,continue_btn) and text()='CONTINUE']
 
 
 ===================================================================================================================

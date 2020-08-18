@@ -54,7 +54,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.selectBuses();
 		basicCourse.selectBusCity();
 		basicCourse.selectDateCalendarBus();
-		String txt = basicCourse.getTextCityBus();
+		String txt = basicCourse.getTextCityArrv();
 		Assert.assertEquals(txt, YamlReader.getData("to_City"));
 		basicCourse.clickSearchBuses();
 		String str = basicCourse.publicTransport();
@@ -63,13 +63,16 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void verifyTravelBlogText() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		String txt = basicCourse.textTravelBlog();
 		String news = txt.replace("VIEW ALL", "").trim();
 		Assert.assertEquals(news, "Travel Blog");
 		basicCourse.clickViewTravelBlog();
+		Thread.sleep(2000);
+		basicCourse.btnContinueBlog();
+		Thread.sleep(3000);
 		String url = basicCourse.getCurrentURL();
 		Assert.assertEquals(url, "https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories");
 
@@ -82,13 +85,15 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.selectCity();
 		basicCourse.selectDateCalendarVisa();
 		basicCourse.selectTime();
-		Thread.sleep(4000);
-		basicCourse.selectPassengerCount();
-//		basicCourse.btnSearchCharter();
-//		basicCourse.checkbox();
+		//basicCourse.selectPassengerCount();
+		Thread.sleep(2000);
+     	basicCourse.btnSearchCharter();
+     	basicCourse.checkbox();
+     	String str = basicCourse.getflight_Name();
+     	Assert.assertEquals(str, "Pilatus PC 12");
 	}
 	
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void navigateToCabs() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectCabs();
@@ -96,13 +101,10 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.selectDateCalendarCabs();
 		basicCourse.selectCabTime();
 		basicCourse.btnSearchCharter();
-		Thread.sleep(2000);
+		String txtcty = basicCourse.getTextCityArrv();
+		Assert.assertEquals(txtcty, YamlReader.getData("to_Place"));
 		String txt = basicCourse.verifyText();
 		Assert.assertEquals(txt, "Your Safety: Our Priority");
-		/*
-		 * String cab = basicCourse.getlistCabs(); Assert.assertEquals(cab,
-		 * "Indica, Swift"); String cabamt = basicCourse.getCabPrice();
-		 * Assert.assertEquals(cabamt, "5,329");
-		 */
+		 
 	}
 }
