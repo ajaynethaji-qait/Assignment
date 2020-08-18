@@ -309,13 +309,12 @@ public class BasicCourseActions extends GetPage {
 	public void selectCityCabs() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
 		Thread.sleep(1000);
+		//element("city_Delhi").click();
 		element("to_City").sendKeys(YamlReader.getData("to_Place"));
 		Thread.sleep(1000);
 		element("select_City").click();
 		Thread.sleep(1000);
 		logMessage("City gets selected");
-//		Actions act = new Actions(driver);
-//		act.sendKeys(Keys.TAB).build().perform();
 	}
 
 	public void selectDateCalendarCabs() throws InterruptedException {
@@ -337,16 +336,23 @@ public class BasicCourseActions extends GetPage {
 
 	}
 
-	public void selectCabTime() {
+	public void selectCabTime() throws InterruptedException {
 		element("select_CabTime").click();
 
 		List<WebElement> details = elements("cab_Time");
 		for (WebElement element : details) {
 
-			String time_text = element.getText();
-			System.out.println(time_text);
-			if (element.getText().equals("08:00 AM")) {
-				element.click();
+			/*
+			 * String time_text = element.getText(); System.out.println(time_text);
+			 * JavascriptExecutor js = (JavascriptExecutor) driver;
+			 * //js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+			 */ 
+			
+			if (element.getAttribute("innerHTML").equals("12:30 AM")) {
+				Thread.sleep(2000);
+				System.out.println(element.toString());
+				scrollDown(element);
+				click(element);
 				break;
 
 			}

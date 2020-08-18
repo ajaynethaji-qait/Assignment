@@ -96,11 +96,13 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.selectDateCalendarCabs();
 		basicCourse.selectCabTime();
 		basicCourse.btnSearchCharter();
-//		String txt = basicCourse.verifyText();
-//		Assert.assertEquals(txt, "Why Book With Us");
-//		String cab = basicCourse.getlistCabs();
-//		Assert.assertEquals(cab, "Indica, Swift");
-//		String cabamt = basicCourse.getCabPrice();
-//		Assert.assertEquals(cabamt, "5,329");
+		Thread.sleep(2000);
+		String txt = basicCourse.verifyText();
+		Assert.assertEquals(txt, "Your Safety: Our Priority");
+		/*
+		 * String cab = basicCourse.getlistCabs(); Assert.assertEquals(cab,
+		 * "Indica, Swift"); String cabamt = basicCourse.getCabPrice();
+		 * Assert.assertEquals(cabamt, "5,329");
+		 */
 	}
 }

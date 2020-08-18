@@ -53,9 +53,12 @@ cabs_Time                   xpath       //ul[@class='timeDropDown blackText']
 select_City                 xpath       (//span[@class='sr_city blackText'])[1] 
 select_CabCalendar          xpath       (//span[@class='lbl_input latoBold appendBottom10'])[1] 
 select_CabTime              xpath       (//span[@class='lbl_input latoBold appendBottom10'])[3]
-text_Visible                xpath       //p[@class='latoBlack font20 blackText appendBottom20' and text()='Why Book With Us'] 
+text_Visible                xpath       //p[@class='font32 latoBold appendBottom10' and text()='Your Safety: Our Priority'] 
 list_Cabs                   xpath       (//span[@class='latoBlack makeFlex hrtlCenter'])[1]
 cab_Price                   xpath       (//p[@class='font28 latoBlack blackText appendBottom5'])[1]
-cab_Time                    xpath       //div[@class='widgetSection appendBottom40']//li
+cab_Time                    xpath       //ul[@class='timeDropDown blackText']/li
+city_Delhi                  xpath       //span[@class='sr_city blackText' and text()='Delhi, India']
+
+
 
 ===================================================================================================================
