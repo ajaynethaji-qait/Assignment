@@ -20,14 +20,14 @@ public class BasicCourseTest extends TestSessionInitiator {
 		basicCourse.switchWindow();
 
 	}
-	
+
 	@Test(priority = 3, enabled = true)
 	public void navigateToCabs() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectCabs();
 		basicCourse.selectCityCabs();
-		basicCourse.selectDateCalendarCabs("August 2020","23");
-		basicCourse.selectCabTime("12:30 AM");
+		basicCourse.selectDateCalendarCabs(YamlReader.getData("month_year"), YamlReader.getData("dt_date"));
+		basicCourse.selectCabTime(YamlReader.getData("cab_time"));
 		basicCourse.btnSearchCharter();
 		String txtcty = basicCourse.getTextCityArrv();
 		Assert.assertEquals(txtcty, YamlReader.getData("to_Place"));
@@ -108,5 +108,4 @@ public class BasicCourseTest extends TestSessionInitiator {
 		Assert.assertEquals(str, "Pilatus PC 12");
 	}
 
-	
 }
