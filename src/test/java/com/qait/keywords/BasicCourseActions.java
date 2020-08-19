@@ -233,8 +233,10 @@ public class BasicCourseActions extends GetPage {
 	}
 
 	public void clickViewTravelBlog() throws InterruptedException {
-		WebElement lblTravelBlog = driver.findElement(By.xpath("//div[@class='makeFlex column blackText latoBold appendBottom20']"));
-		WebElement lblViewAll = driver.findElement(By.xpath("//span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]"));
+		WebElement lblTravelBlog = driver
+				.findElement(By.xpath("//div[@class='makeFlex column blackText latoBold appendBottom20']"));
+		WebElement lblViewAll = driver
+				.findElement(By.xpath("//span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]"));
 		scrollDown(lblTravelBlog);
 		Thread.sleep(3000);
 		click(lblViewAll);
@@ -293,9 +295,9 @@ public class BasicCourseActions extends GetPage {
 	public void selectTime() {
 		List<WebElement> details = elements("charter_Time");
 		for (WebElement element : details) {
-			//String time_text = element.getText();
-		//	String date[] = time_text.split("\n");
-		//	System.out.println(time_text);
+			// String time_text = element.getText();
+			// String date[] = time_text.split("\n");
+			// System.out.println(time_text);
 			if (element.getAttribute("innerHTML").equals("11:00 AM")) {
 				System.out.println(element.toString());
 				click(element);
@@ -303,7 +305,7 @@ public class BasicCourseActions extends GetPage {
 			}
 		}
 	}
-	
+
 //	if (element.getAttribute("innerHTML").equals("12:30 AM")) {
 //		System.out.println(element.toString());
 //		scrollDown(element);
@@ -330,32 +332,32 @@ public class BasicCourseActions extends GetPage {
 		logMessage("City gets selected");
 	}
 
-	public void selectDateCalendarCabs() throws InterruptedException {
+	public void selectDateCalendarCabs(String strMonth, String strDay) throws InterruptedException {
 		element("select_CabCalendar").click();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd");
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 7);
-		String newDate = sdf.format(cal.getTime());
-		List<WebElement> dates = elements("cabs_Calendar");
-		for (WebElement ele : dates) {
-			String date_text = ele.getText();
-			String date[] = date_text.split("\n");
-			if (date[0].equals(newDate)) {
-				ele.click();
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
 				break;
 			}
-
 		}
-
 	}
 
-	public void selectCabTime() throws InterruptedException {
+	public void selectCabTime(String strTime) throws InterruptedException {
 		element("select_CabTime").click();
 
 		List<WebElement> details = elements("cab_Time");
 		for (WebElement element : details) {
 
-			if (element.getAttribute("innerHTML").equals("12:30 AM")) {
+			if (element.getAttribute("innerHTML").equals(strTime)) {
 				System.out.println(element.toString());
 				scrollDown(element);
 				click(element);
@@ -377,11 +379,11 @@ public class BasicCourseActions extends GetPage {
 	public String getCabPrice() {
 		return element("cab_Price").getText();
 	}
-	
+
 	public String getflight_Name() {
 		return element("flight_Name").getText();
 	}
-	
+
 	public void launchUrl() {
 		driver.get(YamlReader.getData("blog_url"));
 		logMessage("Login page gets opened");
@@ -392,5 +394,4 @@ public class BasicCourseActions extends GetPage {
 		logMessage("Blog results displayed");
 	}
 
-	
 }
