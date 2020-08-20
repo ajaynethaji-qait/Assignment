@@ -124,24 +124,23 @@ public class BasicCourseActions extends GetPage {
 		element("select_Trip").click();
 	}
 
-	public void selectDateCalendar() throws InterruptedException {
+	public void selectDateCalendar(String strMonth, String strDay) throws InterruptedException {
 		element("date_Departure").click();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd");
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 7);
-		String newDate = sdf.format(cal.getTime());
-		// String exp_date = "15";
-		List<WebElement> dates = elements("flight_Calendar");
-		// List<WebElement> dates =
-		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div[3]//div//div//div[1]//p[1]"));
-		for (WebElement ele : dates) {
-			String date_text = ele.getText();
-			String date[] = date_text.split("\n");
-			if (date[0].equals(newDate)) {
-				ele.click();
+
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
 				break;
 			}
-
 		}
 	}
 
@@ -191,24 +190,24 @@ public class BasicCourseActions extends GetPage {
 
 	}
 
-	public void selectDateCalendarBus() throws InterruptedException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd");
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 7);
-		String newDate = sdf.format(cal.getTime());
-		// String exp_date = "29";
-		List<WebElement> dates = elements("bus_Calendar");
-		// List<WebElement> dates =
-		// driver.findElements(By.xpath("//div[@class='DayPicker-wrapper']//div[1]//div//div//div"));
-		for (WebElement ele : dates) {
-			String date_text = ele.getText();
-			String date[] = date_text.split("\n");
-			if (date[0].equals(newDate)) {
-				ele.click();
+	public void selectDateCalendarBus(String strMonth, String strDay) throws InterruptedException {
+
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
 				break;
 			}
-
 		}
+
 	}
 
 	public void clickSearchBuses() {
@@ -238,7 +237,6 @@ public class BasicCourseActions extends GetPage {
 		WebElement lblViewAll = driver
 				.findElement(By.xpath("//span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]"));
 		scrollDown(lblTravelBlog);
-		Thread.sleep(3000);
 		click(lblViewAll);
 		logMessage("Blog Page displayed");
 
@@ -246,11 +244,12 @@ public class BasicCourseActions extends GetPage {
 
 	public void selectBusCity() throws InterruptedException {
 		element("from_City").sendKeys(YamlReader.getData("from_City"));
+		Thread.sleep(2000);
 		element("to_City").sendKeys(YamlReader.getData("to_City"));
+		Thread.sleep(2000);
 		element("city_Kanpur").click();
 		logMessage("City gets selected");
-//		Actions act = new Actions(driver);
-//		act.sendKeys(Keys.TAB).build().perform();
+
 	}
 
 	public String getTextCity() {
@@ -305,12 +304,6 @@ public class BasicCourseActions extends GetPage {
 			}
 		}
 	}
-
-//	if (element.getAttribute("innerHTML").equals("12:30 AM")) {
-//		System.out.println(element.toString());
-//		scrollDown(element);
-//		click(element);
-//		break;
 
 	public void selectPassengerCount() {
 		element("passengers_Count").click();
@@ -394,4 +387,23 @@ public class BasicCourseActions extends GetPage {
 		logMessage("Blog results displayed");
 	}
 
+	public void selectDateCalendarCharter(String strMonth, String strDay) throws InterruptedException {
+		element("charter_CalendarDt").click();
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
+				break;
+			}
+		}
+
+	}
 }

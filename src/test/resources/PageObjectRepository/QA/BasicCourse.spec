@@ -30,7 +30,7 @@ date_Stay                   xpath       (//p[@class='blackText font20 code'])[1]
 city_Kanpur                 xpath       //span[@class='sr_city blackText' and text()='Kanpur, Uttar Pradesh'] 
 date_BusTravel              xpath       //input[@id='travelDate'] 
 btn_SearchBuses             xpath       //button[@class='primaryBtn font24 latoBold widgetSearchBtn']
-bus_Transport               xpath       //span[@class='sc-gPEVay fmZOdU' and text()='State Transports'] 
+bus_Transport               xpath       //span[@class='sc-hzDkRC bzmZdM' and text()='State Transports'] 
 view_Bus                    xpath       //a[@id='toggle_buses']
 txt_TravelBlog              xpath       //div[@class='makeFlex column blackText latoBold appendBottom20']
 btn_ViewTravelBlog          xpath       //span[@class='makeFlex pushRight']/a[contains(@href,'Tab_Stories')]
@@ -48,7 +48,7 @@ charter_CalendarDt          xpath       //span[@class='lbl_input latoBold append
 charter_Time                xpath       //ul[@class='timeList']//li
 passengers_Count            xpath       //span[@class='lbl_input latoBold appendBottom10' and text()='Passengers'] 
 passenger_Cnt               xpath       //ul[@class='passengerList font12 darkText']//li
-cabs_MonthCalendar          xpath      //div[@class='DayPicker-Caption']
+cabs_MonthCalendar          xpath       //div[@class='DayPicker-Caption']
 cabs_Time                   xpath       //ul[@class='timeDropDown blackText'] 
 select_City                 xpath       (//span[@class='sr_city blackText'])[1] 
 select_CabCalendar          xpath       (//span[@class='lbl_input latoBold appendBottom10'])[1] 

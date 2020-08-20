@@ -21,7 +21,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void navigateToCabs() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectCabs();
@@ -35,14 +35,29 @@ public class BasicCourseTest extends TestSessionInitiator {
 		Assert.assertEquals(txt, "Your Safety: Our Priority");
 
 	}
+	
+	@Test(priority = 3, enabled = false)
+	public void navigateToCharterFlights() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectCharterFlights();
+		basicCourse.selectCity();
+		basicCourse.selectDateCalendarCharter(YamlReader.getData("month_year"), YamlReader.getData("dt_date"));
+		basicCourse.selectTime();
+		// basicCourse.selectPassengerCount();
+		Thread.sleep(3000);
+		basicCourse.btnSearchCharter();
+		basicCourse.checkbox();
+		String str = basicCourse.getflight_Name();
+		Assert.assertEquals(str, "Pilatus PC 12");
+	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(enabled = true)
 	public void navigateToFlights() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectFlights();
 		basicCourse.selectTrip();
 		basicCourse.selectCity();
-		basicCourse.selectDateCalendar();
+		basicCourse.selectDateCalendar(YamlReader.getData("flight_month"), YamlReader.getData("dt_date"));
 		basicCourse.btnSearch();
 		String txt = basicCourse.getTextCity();
 		String news = txt.replace("Flights from", "").trim();
@@ -63,12 +78,12 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(enabled = false)
 	public void navigateToBuses() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectBuses();
 		basicCourse.selectBusCity();
-		basicCourse.selectDateCalendarBus();
+		basicCourse.selectDateCalendarBus(YamlReader.getData("month_year"), YamlReader.getData("dt_date"));
 		String txt = basicCourse.getTextCityArrv();
 		Assert.assertEquals(txt, YamlReader.getData("to_City"));
 		basicCourse.clickSearchBuses();
@@ -78,34 +93,18 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(enabled = false)
 	public void verifyTravelBlogText() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		String txt = basicCourse.textTravelBlog();
 		String news = txt.replace("VIEW ALL", "").trim();
 		Assert.assertEquals(news, "Travel Blog");
 		basicCourse.clickViewTravelBlog();
-		Thread.sleep(2000);
 		basicCourse.btnContinueBlog();
-		Thread.sleep(3000);
 		String url = basicCourse.getCurrentURL();
 		Assert.assertEquals(url, "https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories");
 
 	}
 
-	@Test(priority = 3, enabled = false)
-	public void navigateToCharterFlights() throws Throwable {
-		basicCourse.launchApplicationUrl();
-		basicCourse.selectCharterFlights();
-		basicCourse.selectCity();
-		basicCourse.selectDateCalendarVisa();
-		basicCourse.selectTime();
-		// basicCourse.selectPassengerCount();
-		Thread.sleep(2000);
-		basicCourse.btnSearchCharter();
-		basicCourse.checkbox();
-		String str = basicCourse.getflight_Name();
-		Assert.assertEquals(str, "Pilatus PC 12");
-	}
 
 }
