@@ -23,7 +23,7 @@ btn_Search                  xpath       //a[@class='primaryBtn font24 latoBold w
 checkbox_Nonstop            xpath       //p[@class='font14 append_bottom4 lineHeight18' and text()='Non Stop'] 
 checkbox_Flight             xpath       (//p[@class='font14 lineHeight18' and text()='IndiGo'])[2]
 btn_ViewPrices              xpath       (//button[@class='ViewFareBtn  text-uppercase ' and text()='View Prices'])[1]
-hotel_City                  xpath       //p[@class='locusLabel appendBottom5' and text()='Kasol, Himachal Pradesh, India'] 
+hotel_City                  xpath       //input[@id='city'] 
 input_City                  xpath       //input[@class='react-autosuggest__input react-autosuggest__input--open']
 lbl_City                    xpath       //span[@class='lbl_input latoBold  appendBottom5' and text()='City / Hotel / Area / Building']
 date_Stay                   xpath       (//p[@class='blackText font20 code'])[1]
@@ -60,6 +60,10 @@ cab_Time                    xpath       //ul[@class='timeDropDown blackText']/li
 city_Delhi                  xpath       //span[@class='sr_city blackText' and text()='Delhi, India']
 flight_Name                 xpath       //p[@class='charterListTitle' and text()='Pilatus PC 12']
 btn_ContinueBlogPage        xpath       //a[contains(@class,continue_btn) and text()='CONTINUE']
-
-
+destn_city                  xpath       //p[@class='locusLabel appendBottom5' and text()='Kasol, Himachal Pradesh, India'] 
+tab_Trains                  xpath       //span[@class='chNavText darkGreyText' and text()='Trains']
+destn_Traincty              xpath       //span[@class='sr_city blackText' and text()='Kanpur Central Railway Station'] 
+travel_Date                 xpath       //input[@class='rsw_inputField font20 date']
+dest_Citytxt                xpath       (//input[@class='rsw_inputField font16 whiteText '])[2] 
+btn_Tatkal                  xpath       (//span[@class='btnText' and text()='Nearby Dates & Tatkal'])[1]
 ===================================================================================================================

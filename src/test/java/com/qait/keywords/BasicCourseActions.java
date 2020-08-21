@@ -184,9 +184,9 @@ public class BasicCourseActions extends GetPage {
 	}
 
 	public void selectHotelCity() throws InterruptedException {
-		// element("lbl_City").click();
-		element("input_City").sendKeys(YamlReader.getData("City"));
-		element("hotel_City").click();
+		// element("hotel_City").click();
+		element("hotel_City").sendKeys(YamlReader.getData("stay_City"));
+		element("destn_city").click();
 
 	}
 
@@ -406,4 +406,44 @@ public class BasicCourseActions extends GetPage {
 		}
 
 	}
+
+	public void selectTrainCity() throws InterruptedException {
+		element("from_City").sendKeys(YamlReader.getData("from_CityTrain"));
+		Thread.sleep(2000);
+		element("to_City").sendKeys(YamlReader.getData("to_CityTrain"));
+		Thread.sleep(2000);
+		element("destn_Traincty").click();
+		logMessage("City gets selected");
+
+	}
+
+	public void selectDateCalendarTrain(String strMonth, String strDay) throws InterruptedException {
+		element("travel_Date").click();
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
+				break;
+			}
+		}
+	}
+
+	public String getTextCityArrvTrain() {
+		return element("dest_Citytxt").getAttribute("value");
+		// to_City
+	}
+
+	public void btnSearchTatkal() {
+		element("btn_Tatkal").click();
+		logMessage("Nearby dates with availability gets displayed.");
+	}
+
 }

@@ -35,7 +35,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 		Assert.assertEquals(txt, "Your Safety: Our Priority");
 
 	}
-	
+
 	@Test(priority = 3, enabled = false)
 	public void navigateToCharterFlights() throws Throwable {
 		basicCourse.launchApplicationUrl();
@@ -51,7 +51,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 		Assert.assertEquals(str, "Pilatus PC 12");
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void navigateToFlights() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectFlights();
@@ -72,9 +72,9 @@ public class BasicCourseTest extends TestSessionInitiator {
 	public void navigateToHotels() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectHotels();
-		// basicCourse.selectHotelCity();
-		basicCourse.selectDateCalendarHotel();
-		basicCourse.btnSearch();
+		basicCourse.selectHotelCity();
+//		basicCourse.selectDateCalendarHotel();
+//		basicCourse.btnSearch();
 
 	}
 
@@ -106,5 +106,18 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
+	@Test(priority = 2, enabled = true)
+	public void navigateToTrains() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectTrains();
+		basicCourse.selectTrainCity();
+		// basicCourse.selectDateCalendarTrain(YamlReader.getData("month_year"),
+		// YamlReader.getData("dt_date"));
+		basicCourse.btnSearchCharter();
+		String txt = basicCourse.getTextCityArrvTrain();
+		Assert.assertEquals(txt, YamlReader.getData("arr_City"));
+		basicCourse.btnSearchTatkal();
+
+	}
 
 }

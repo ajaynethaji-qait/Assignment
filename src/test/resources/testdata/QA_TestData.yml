@@ -2,6 +2,7 @@ app_url: https://www.makemytrip.com/
 username: 123
 password: 123
 
+stay_City: kasol
 to_NewCity: Chennai, India
 to_City: Kanpur, Uttar Pradesh
 from_City: Delhi, India
@@ -9,6 +10,9 @@ to_Place: Amritsar, Punjab, India
 month_year: August 2020
 dt_date: 29
 cab_time: 12:30 AM
+from_CityTrain: delhi
+to_CityTrain: kanpur
+arr_City: CNB, Kanpur
 
 flight_month: September 2020
 
@@ -16,7 +20,7 @@ flight_month: September 2020
 
 blog_url: https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories
 
-City: kasol
+
 
 ProjectName: Sample V8 Demo
 credentials:
