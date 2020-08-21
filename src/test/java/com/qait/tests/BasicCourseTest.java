@@ -106,7 +106,7 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void navigateToTrains() throws Throwable {
 		basicCourse.launchApplicationUrl();
 		basicCourse.selectTrains();
@@ -120,4 +120,17 @@ public class BasicCourseTest extends TestSessionInitiator {
 
 	}
 
+	@Test(priority = 2, enabled = true)
+	public void navigateToVisa() throws Throwable {
+		basicCourse.launchApplicationUrl();
+		basicCourse.selectVisa();
+		basicCourse.selectCountryVisa();
+		basicCourse.selectDateCalendar(YamlReader.getData("flight_month"), YamlReader.getData("dt_date"));
+		basicCourse.selectDateCalendarVisa(YamlReader.getData("flight_monnth"), YamlReader.getData("dt_date"));
+        basicCourse.clickSearchBuses();
+        String str =  basicCourse.getTxtDocs();
+        Assert.assertEquals(str, YamlReader.getData("txt_Docs"));
+        
+
+	}
 }

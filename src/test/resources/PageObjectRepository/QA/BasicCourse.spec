@@ -66,4 +66,22 @@ destn_Traincty              xpath       //span[@class='sr_city blackText' and te
 travel_Date                 xpath       //input[@class='rsw_inputField font20 date']
 dest_Citytxt                xpath       (//input[@class='rsw_inputField font16 whiteText '])[2] 
 btn_Tatkal                  xpath       (//span[@class='btnText' and text()='Nearby Dates & Tatkal'])[1]
+select_Dest                 xpath       //input[@id='fromCountryCode']
+date_Return                 xpath       //span[@class='lbl_input latoBold appendBottom10' and text()='RETURN']
+tab_Visa                    xpath       //span[@class='chNavText darkGreyText' and text()='Visa']
+visa_Country                xpath       //span[@class='sr_city blackText' and text()='Singapore'] 
+txt_Docs                    xpath       //p[@class='step-heading' and text()='Upload Document']
+
+
+
+
+
+
+
+
+
+
+
+
+
 ===================================================================================================================

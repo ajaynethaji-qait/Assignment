@@ -13,8 +13,11 @@ cab_time: 12:30 AM
 from_CityTrain: delhi
 to_CityTrain: kanpur
 arr_City: CNB, Kanpur
+for_Country: Singapore
 
 flight_month: September 2020
+flight_monnth: October 2020
+txt_Docs: Upload Document
 
 
 

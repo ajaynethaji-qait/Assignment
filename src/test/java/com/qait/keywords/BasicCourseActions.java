@@ -446,4 +446,33 @@ public class BasicCourseActions extends GetPage {
 		logMessage("Nearby dates with availability gets displayed.");
 	}
 
+	public void selectCountryVisa() throws InterruptedException {
+		element("select_Dest").sendKeys(YamlReader.getData("for_Country"));
+		element("visa_Country").click();
+		logMessage("Country gets selected");
+	}
+
+	public void selectDateCalendarVisa(String strMonth, String strDay) throws InterruptedException {
+
+		List<WebElement> detailMonth = elements("cabs_MonthCalendar");
+		for (WebElement element : detailMonth) {
+			if (element.getAttribute("innerText").contains(strMonth)) {
+				List<WebElement> detailsDay = driver.findElements(By.xpath("//div[contains(text(),'" + strMonth
+						+ "')]/parent::div/following-sibling::div[@class='DayPicker-Body']/div[@class='DayPicker-Week']/div"));
+				for (WebElement element1 : detailsDay) {
+					if (element1.getAttribute("innerText").contains(strDay)) {
+						click(element1);
+						break;
+					}
+
+				}
+				break;
+			}
+		}
+	}
+
+	public String getTxtDocs() {
+		return element("txt_Docs").getText();
+	}
+
 }
